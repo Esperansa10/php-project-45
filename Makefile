@@ -17,4 +17,4 @@ brain-even:
 	./bin/brain-even
 
 brain-gcd:
-	.bin/brain-gcd
+	./bin/brain-gcd

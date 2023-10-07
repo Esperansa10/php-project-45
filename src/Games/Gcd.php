@@ -8,6 +8,7 @@ use function cli\greet;
 use function cli\line;
 use function cli\prompt;
 use function Engine\engine; 
+use function gmp_gcd; 
 
  
 function gcd($name)
@@ -19,25 +20,17 @@ function gcd($name)
     for($i = 1; $i <= 3; $i++) {
 
     $result = '';
-    $arr = ['+','-','*'];
-    $operator = $arr[array_rand($arr)];
-    $random1 = rand(1,10); 
-    $random2 =  rand(1,10); 
-
-    line('Question: '. $random1 . ' ' . $operator . ' ' . $random2); 
+    $a = rand(1,100); 
+    $b =  rand(1,100); 
+    
+    line('Question: '. $a . ' ' . $b); 
     $answer = prompt('Your answer');
     $answer = intval($answer); 
         
         //считаем result 
-        if ($operator === '+'){
-            $result = $random1+$random2 ; 
-        }
-        else if  ($operator === '-'){
-            $result = $random1-$random2   ; 
-            }
-        else {
-            $result = $random1*$random2  ;
-        } 
+               
+        $result = gcd_result($a, $b); 
+        
         // закончили считать result
         
         //сравниваем result и answer   
@@ -49,4 +42,8 @@ function gcd($name)
     }
     line("Congratulations, " . $name . "!");
 } 
+
+function gcd_result($a,$b) {
+    return ($a % $b) ? gcd_result($b,$a % $b) : $b;
+}
 
