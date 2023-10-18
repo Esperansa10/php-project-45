@@ -35,9 +35,9 @@ function gcd($name)
         
         //сравниваем result и answer   
         if ($answer === $result) {
-            Engine\engine($answer, $result,  $username);      
+            Engine\checkAnser($answer, $result,  $username);      
         }
-        else return Engine\engine($answer, $result,  $username);             
+        else return Engine\checkAnser($answer, $result,  $username);             
         
     }
     line("Congratulations, " . $name . "!");

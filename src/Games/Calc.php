@@ -7,46 +7,44 @@ use BrainGames\Engine;
 use function cli\greet;
 use function cli\line;
 use function cli\prompt;
-use function Engine\engine; 
+use function Engine\engine;
 
- 
-function calc($name)
+
+function calc()
 {
 
-    $username = $name; 
-      line('What is the result of the expression?');
-    
-    for($i = 1; $i <= 3; $i++) {
+    line('Welcome to the Brain Game!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
 
-    $result = '';
-    $arr = ['+','-','*'];
-    $operator = $arr[array_rand($arr)];
-    $random1 = rand(1,10); 
-    $random2 =  rand(1,10); 
+    line('What is the result of the expression?');
 
-    line('Question: '. $random1 . ' ' . $operator . ' ' . $random2); 
-    $answer = prompt('Your answer');
-    $answer = intval($answer); 
-        
+    for ($i = 1; $i <= 3; $i++) {
+
+        $result = '';
+        $arrOperators = ['+', '-', '*'];
+        $operator = $arrOperators[array_rand($arrOperators)];
+        $random1 = rand(1, 10);
+        $random2 =  rand(1, 10);
+
+        line('Question: ' . $random1 . ' ' . $operator . ' ' . $random2);
+        $answer = prompt('Your answer');
+        $answer = intval($answer);
+
         //считаем result 
-        if ($operator === '+'){
-            $result = $random1+$random2 ; 
+        if ($operator === '+') {
+            $result = $random1 + $random2;
+        } else if ($operator === '-') {
+            $result = $random1 - $random2;
+        } else {
+            $result = $random1 * $random2;
         }
-        else if  ($operator === '-'){
-            $result = $random1-$random2   ; 
-            }
-        else {
-            $result = $random1*$random2  ;
-        } 
         // закончили считать result
-        
+
         //сравниваем result и answer   
         if ($answer === $result) {
-            Engine\engine($answer, $result,  $username);      
-        }
-        else return Engine\engine($answer, $result,  $username);             
-        
+            Engine\checkAnser($answer, $result,  $name);
+        } else return Engine\checkAnser($answer, $result,  $name);
     }
     line("Congratulations, " . $name . "!");
-} 
-
+}

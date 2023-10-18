@@ -24,35 +24,35 @@ function even($name)
         if ($random % 2 === 1 && $answer === 'yes') {
             $result = 'no'; 
             $answer = 'yes'; 
-            return Engine\engine($answer, $result,  $username);             
+            return Engine\checkAnser($answer, $result,  $username);             
         }
         else if ($random % 2 === 0 & $answer === 'no')  {
             $result = 'yes'; 
             $answer = 'no'; 
-            return  Engine\engine($answer, $result,  $username);             
+            return  Engine\checkAnser($answer, $result,  $username);             
            
         }
         else if ($random % 2 === 1 & $answer !== 'no')  {
             $result = 'yes'; 
             $answer = 'no'; 
-            return  Engine\engine($answer, $result,  $username);
+            return  Engine\checkAnser($answer, $result,  $username);
             
         }
         else if ($random % 2 === 0 & $answer !== 'yes')  {
             $result = 'no';
             $answer = 'yes'; 
-            return  Engine\engine($answer, $result,  $username);
+            return  Engine\checkAnser($answer, $result,  $username);
            
         }
         else if  ($random % 2 === 0 & $answer === 'yes'){
             $result = 'yes';
             $answer = 'yes'; 
-            Engine\engine($answer, $result,  $username);
+            Engine\checkAnser($answer, $result,  $username);
         }
         else if ($random % 2 === 1 & $answer === 'no'){
             $result = 'no';
             $answer = 'no'; 
-            Engine\engine($answer, $result, $username);
+            Engine\checkAnser($answer, $result, $username);
         }
 
            
