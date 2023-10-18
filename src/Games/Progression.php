@@ -15,7 +15,7 @@ function progression()
   line('Welcome to the Brain Games!');
   $name = prompt('May I have your name?');
   line("Hello, %s!", $name);
-  line('What is the result of the expression?');
+  line('What number is missing in the progression?');
   $b = 0;
   for ($i = 1; $i <= 3; $i++) {
 
