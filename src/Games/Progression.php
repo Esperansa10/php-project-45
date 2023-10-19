@@ -35,7 +35,7 @@ function progression()
     $basket = '';
 
     //ставим пробел в массиве
-    $indexchange = rand(1, 10); //было rand(0,9); 
+    $indexchange = rand(0, 9); 
     $result = $arr[$indexchange];
     $hide[$indexchange] = '..';
     $basket = array_replace($arr, $hide);
