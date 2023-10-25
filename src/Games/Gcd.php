@@ -1,7 +1,6 @@
 <?php
 
 namespace BrainGames\Gcd;
-
 use BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
@@ -29,8 +28,10 @@ function gcd()
         // закончили считать result
         //сравниваем result и answer   
         if ($answer === $result) {
-            Engine\checkAnser($answer, $result,  $name);
-        } else return Engine\checkAnser($answer, $result,  $name);
+            Engine\checkAnser($answer, $result, $name);
+        } 
+        else { return Engine\checkAnser($answer, $result, $name);
+        }
     }
     line("Congratulations, " . $name . "!");
 }
