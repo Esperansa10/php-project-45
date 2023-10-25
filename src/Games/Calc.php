@@ -3,6 +3,7 @@
 namespace BrainGames\Even;
 
 use BrainGames\Engine;
+
 use function cli\line;
 use function cli\prompt;
 
@@ -16,7 +17,6 @@ function calc()
     line('What is the result of the expression?');
 
     for ($i = 1; $i <= 3; $i++) {
-
         $result = '';
         $arrOperators = ['+', '-', '*'];
         $operator = $arrOperators[array_rand($arrOperators)];
@@ -27,20 +27,22 @@ function calc()
         $answer = prompt('Your answer');
         $answer = intval($answer);
 
-        //считаем result 
+        //считаем result
         if ($operator === '+') {
             $result = $random1 + $random2;
-        } else if ($operator === '-') {
+        } elseif ($operator === '-') {
             $result = $random1 - $random2;
         } else {
             $result = $random1 * $random2;
         }
         // закончили считать result
 
-        //сравниваем result и answer   
+        //сравниваем result и answer
         if ($answer === $result) {
-            Engine\checkAnser($answer, $result,  $name);
-        } else return Engine\checkAnser($answer, $result,  $name);
+            Engine\checkAnser($answer, $result, $name);
+        } else {
+            return Engine\checkAnser($answer, $result, $name);
+        }
     }
     line("Congratulations, " . $name . "!");
 }
