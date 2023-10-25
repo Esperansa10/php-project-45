@@ -2,13 +2,9 @@
 
 namespace BrainGames\Even;
 
-use BrainGames\Cli;
 use BrainGames\Engine;
-use function cli\greet;
 use function cli\line;
 use function cli\prompt;
-use function Engine\engine;
-
 
 function calc()
 {
