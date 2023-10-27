@@ -19,7 +19,7 @@ function even()
 
     for ($i = 1; $i <= 3; $i++) {
         line('Question: ' . $random = rand(1, 10));
-        // line('Question: ' . $random = 6);
+        // line('Question: ' . $random = 7);
         $answer = prompt('Your answer');
         $result = primeCheck($random);
 
@@ -35,11 +35,6 @@ function even()
         } elseif ($result === 0 && $answer !== 'no') {
             $result = 'no';
             $answer = 'yes';
-            return Engine\checkAnser($answer, $result, $name);
-
-        } elseif ($result === 1 && $answer !== 'yes') {
-            $result = 'yes';
-            $answer = 'no';
             return Engine\checkAnser($answer, $result, $name);
 
         } elseif ($result === 1 && $answer === 'yes') {
