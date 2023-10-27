@@ -39,7 +39,7 @@ function prime()
     line("Congratulations, " . $name . "!");
 }
 
-function primeCheck($number)
+function primeCheck(int $number)
 {
     if ($number == 1) {
         return 0;

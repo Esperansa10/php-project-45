@@ -4,7 +4,7 @@ namespace BrainGames\Engine;
 
 use function cli\line;
 
-function checkAnser($answer, $result, $username)
+function checkAnser(int|string $answer, int|string $result, string $username)
 {
     if ($answer === $result) {
         return line("Correct");
