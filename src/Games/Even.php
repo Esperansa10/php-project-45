@@ -26,21 +26,21 @@ function even()
         if ($result === 0 && $answer === 'yes') {
             $result = 'no';
             $answer = 'yes';
-             Engine\checkAnser($answer, $result, $name);
+            return Engine\checkAnser($answer, $result, $name);
         } elseif ($result === 1 && $answer !== 'yes') {
             $result = 'yes';
             $answer = 'no';
-              Engine\checkAnser($answer, $result, $name);
+            return Engine\checkAnser($answer, $result, $name);
 
         } elseif ($result === 0 && $answer !== 'no') {
             $result = 'no';
             $answer = 'yes';
-              Engine\checkAnser($answer, $result, $name);
+            return Engine\checkAnser($answer, $result, $name);
 
         } elseif ($result === 1 && $answer !== 'yes') {
             $result = 'yes';
             $answer = 'no';
-              Engine\checkAnser($answer, $result, $name);
+            return Engine\checkAnser($answer, $result, $name);
 
         } elseif ($result === 1 && $answer === 'yes') {
             $result = 'yes';
