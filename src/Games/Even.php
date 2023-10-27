@@ -26,32 +26,32 @@ function even()
         if ($result === 0 && $answer === 'yes') {
             $result = 'no';
             $answer = 'yes';
-            return Engine\checkAnser($answer, $result, $name);
+             Engine\checkAnser($answer, $result, $name);
         } elseif ($result === 1 && $answer === 'no') {
             $result = 'yes';
             $answer = 'no';
-            return  Engine\checkAnser($answer, $result, $name);
+              Engine\checkAnser($answer, $result, $name);
 
         } elseif ($result === 0 && $answer !== 'no') {
             $result = 'no';
             $answer = 'yes';
-            return  Engine\checkAnser($answer, $result, $name);
+              Engine\checkAnser($answer, $result, $name);
 
         } elseif ($result === 1 && $answer !== 'yes') {
             $result = 'yes';
             $answer = 'no';
-            return  Engine\checkAnser($answer, $result, $name);
+              Engine\checkAnser($answer, $result, $name);
 
         } elseif ($result === 1 && $answer === 'yes') {
             $result = 'yes';
             $answer = 'yes';
-           return Engine\checkAnser($answer, $result, $name);
+            Engine\checkAnser($answer, $result, $name);
 
         } elseif ($result === 0 && $answer === 'no') {
             $result = 'no';
             $answer = 'no';
-           return Engine\checkAnser($answer, $result, $name);
-           
+            Engine\checkAnser($answer, $result, $name);
+
         }
     }
     return line("Congratulations, " .  $name . "!");
