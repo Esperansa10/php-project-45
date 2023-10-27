@@ -15,36 +15,36 @@ function even()
     line('Answer "yes" if the number is even, otherwise answer "no".');
 
     $random = '';
-
+   
 
     for ($i = 1; $i <= 3; $i++) {
         line('Question: ' . $random = rand(1, 10));
-        // line('Question: ' . $random = 7);
+        // line('Question: ' . $random = 3);
         $answer = prompt('Your answer');
-        $result = primeCheck($random);
+        $flag = primeCheck($random);
 
-        if ($result === 0 && $answer === 'yes') {
+        if ($flag === 0 && $answer === 'yes') {
             $result = 'no';
-            $answer = 'yes';
+            
             return Engine\checkAnser($answer, $result, $name);
-        } elseif ($result === 1 && $answer !== 'yes') {
+        } elseif ($flag === 1 && $answer !== 'yes') {
             $result = 'yes';
-            $answer = 'no';
+           
             return Engine\checkAnser($answer, $result, $name);
 
-        } elseif ($result === 0 && $answer !== 'no') {
+        } elseif ($flag === 0 && $answer !== 'no') {
             $result = 'no';
-            $answer = 'yes';
+            
             return Engine\checkAnser($answer, $result, $name);
 
-        } elseif ($result === 1 && $answer === 'yes') {
+        } elseif ($flag === 1 && $answer === 'yes') {
             $result = 'yes';
-            $answer = 'yes';
+            
             Engine\checkAnser($answer, $result, $name);
 
-        } elseif ($result === 0 && $answer === 'no') {
+        } elseif ($flag === 0 && $answer === 'no') {
             $result = 'no';
-            $answer = 'no';
+            
             Engine\checkAnser($answer, $result, $name);
 
         }
