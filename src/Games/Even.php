@@ -12,7 +12,6 @@ function even()
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-
     line('Answer "yes" if the number is even, otherwise answer "no".');
 
     $random = '';
@@ -20,6 +19,7 @@ function even()
 
     for ($i = 1; $i <= 3; $i++) {
         line('Question: ' . $random = rand(1, 10));
+        // line('Question: ' . $random = 6);
         $answer = prompt('Your answer');
         $result = primeCheck($random);
 
