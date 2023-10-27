@@ -27,7 +27,7 @@ function even()
             $result = 'no';
             $answer = 'yes';
              Engine\checkAnser($answer, $result, $name);
-        } elseif ($result === 1 && $answer === 'no') {
+        } elseif ($result === 1 && $answer !== 'yes') {
             $result = 'yes';
             $answer = 'no';
               Engine\checkAnser($answer, $result, $name);
