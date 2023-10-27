@@ -21,7 +21,6 @@ function even()
     for ($i = 1; $i <= 3; $i++) {
         line('Question: ' . $random = rand(1, 10));
         $answer = prompt('Your answer');
-
         $result = primeCheck($random);
 
         if ($result === 0 && $answer === 'yes') {
@@ -31,24 +30,28 @@ function even()
         } elseif ($result === 1 && $answer === 'no') {
             $result = 'yes';
             $answer = 'no';
-
             return  Engine\checkAnser($answer, $result, $name);
+
         } elseif ($result === 0 && $answer !== 'no') {
             $result = 'no';
             $answer = 'yes';
             return  Engine\checkAnser($answer, $result, $name);
+
         } elseif ($result === 1 && $answer !== 'yes') {
             $result = 'yes';
             $answer = 'no';
             return  Engine\checkAnser($answer, $result, $name);
+
         } elseif ($result === 1 && $answer === 'yes') {
             $result = 'yes';
             $answer = 'yes';
-            Engine\checkAnser($answer, $result, $name);
+           return Engine\checkAnser($answer, $result, $name);
+
         } elseif ($result === 0 && $answer === 'no') {
             $result = 'no';
             $answer = 'no';
-            Engine\checkAnser($answer, $result, $name);
+           return Engine\checkAnser($answer, $result, $name);
+           
         }
     }
     return line("Congratulations, " .  $name . "!");
