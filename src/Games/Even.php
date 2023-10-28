@@ -18,8 +18,8 @@ function even()
    
 
     for ($i = 1; $i <= 3; $i++) {
-        line('Question: ' . $random = rand(1, 10));
-        // line('Question: ' . $random = 3);
+        // line('Question: ' . $random = rand(1, 10));
+        line('Question: ' . $random = 6);
         $answer = prompt('Your answer');
         $flag = primeCheck($random);
 
