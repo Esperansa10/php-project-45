@@ -21,10 +21,10 @@ function gcd()
 
         line('Question: ' . $a . ' ' . $b);
         $answer = prompt('Your answer');
-        $answer = intval($answer);
+        $answer = (int) $answer;
 
         //считаем result
-        $result = gcd_result($a, $b);
+        $result = (int) gcd_result($a, $b);
 
         // закончили считать result
         //сравниваем result и answer
@@ -37,7 +37,13 @@ function gcd()
     line("Congratulations, " . $name . "!");
 }
 
-function gcd_result(int|bool $a, int|bool $b)
+function gcd_result(int $a, int $b)
 {
-    return ($a % $b) ? gcd_result($b, $a % $b) : $b;
+    return (int) ($a % $b) ? gcd_result($b, $a % $b) : $b;
 }
+
+// function gcd_result(int $a, int $b) {
+//     return gmp_gcd($a, $b); 
+// }
+
+
