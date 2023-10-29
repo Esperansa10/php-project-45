@@ -41,9 +41,3 @@ function gcd_result(int $a, int $b)
 {
     return (int) ($a % $b) ? gcd_result($b, $a % $b) : $b;
 }
-
-// function gcd_result(int $a, int $b) {
-//     return gmp_gcd($a, $b); 
-// }
-
-
