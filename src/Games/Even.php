@@ -15,56 +15,45 @@ function even()
     line('Answer "yes" if the number is even, otherwise answer "no".');
 
     $random = '';
-   
+
 
     for ($i = 1; $i <= 3; $i++) {
-        // line('Question: ' . $random = rand(1, 10));
-        line('Question: ' . $random = 6);
+        line('Question: ' . $random = rand(1, 10));
+        // line('Question: ' . $random = 6);
         $answer = prompt('Your answer');
-        $flag = primeCheck($random);
+        $flag = evenCheck($random);
 
         if ($flag === 0 && $answer === 'yes') {
             $result = 'no';
-            
+
             return Engine\checkAnser($answer, $result, $name);
         } elseif ($flag === 1 && $answer !== 'yes') {
             $result = 'yes';
-           
-            return Engine\checkAnser($answer, $result, $name);
 
+            return Engine\checkAnser($answer, $result, $name);
         } elseif ($flag === 0 && $answer !== 'no') {
             $result = 'no';
-            
-            return Engine\checkAnser($answer, $result, $name);
 
+            return Engine\checkAnser($answer, $result, $name);
         } elseif ($flag === 1 && $answer === 'yes') {
             $result = 'yes';
-            
-            Engine\checkAnser($answer, $result, $name);
 
+            Engine\checkAnser($answer, $result, $name);
         } elseif ($flag === 0 && $answer === 'no') {
             $result = 'no';
-            
-            Engine\checkAnser($answer, $result, $name);
 
+            Engine\checkAnser($answer, $result, $name);
         }
     }
     return line("Congratulations, " .  $name . "!");
 }
 
-//cчитаем, простое ли число
-// 1 простое число
-// 0 непростое число
-function primeCheck(int $number)
+//cчитаем, четное ли число
+// 1 четное
+// 0 нечетное
+function evenCheck(int $number)
 {
-    if ($number == 1) {
-        return 0;
-    }
-
-    for ($i = 2; $i <= $number / 2; $i++) {
-        if ($number % $i == 0) {
-            return 0;
-        }
-    }
-    return 1;
+    if ($number % 2 === 0) {
+        return 1;
+    } else return 0;
 }
