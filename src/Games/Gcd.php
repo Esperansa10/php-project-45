@@ -37,7 +37,12 @@ function gcd()
     line("Congratulations, " . $name . "!");
 }
 
-function gcd_result(bool $a, bool $b)
+function gcd_result(int $a, int $b)
 {
-    return ($a % $b) ? gcd_result($b, $a % $b) : $b;
+    while ($a % $b > 0) {
+        $result = $a % $b;
+        $a = $b;
+        $b = $result;
+    }
+    return $result;
 }
