@@ -39,7 +39,7 @@ function gcd()
 
 function gcd_result(int $a, int $b)
 {
-    $result = 0; 
+    $result = 0;
     while ($a % $b > 0) {
         $result = $a % $b;
         $a = $b;
