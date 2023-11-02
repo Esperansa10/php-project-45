@@ -7,7 +7,6 @@ use BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-$result = '';
 function gcd()
 {
     line('Welcome to the Brain Games!');
@@ -40,6 +39,7 @@ function gcd()
 
 function gcd_result(int $a, int $b)
 {
+    $result = 0; 
     while ($a % $b > 0) {
         $result = $a % $b;
         $a = $b;
