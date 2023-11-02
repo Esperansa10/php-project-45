@@ -7,6 +7,7 @@ use BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
+$result = '';
 function gcd()
 {
     line('Welcome to the Brain Games!');
