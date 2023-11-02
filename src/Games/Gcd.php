@@ -19,6 +19,9 @@ function gcd()
         $a = rand(1, 100);
         $b = rand(1, 100);
 
+        // $a = 23;
+        // $b = 1;
+
         line('Question: ' . $a . ' ' . $b);
         $answer = prompt('Your answer');
         $answer = (int) $answer;
@@ -39,7 +42,7 @@ function gcd()
 
 function gcd_result(int $a, int $b)
 {
-    $result = 0;
+    $result = 1;
     while ($a % $b > 0) {
         $result = $a % $b;
         $a = $b;
