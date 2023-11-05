@@ -19,7 +19,7 @@ function prime()
     for ($i = 1; $i <= 3; $i++) {
         $number = rand(1, 100);
         $flag = primeCheck($number);
-        if ($flag == 1) {
+        if ($flag == true) {
             $result = 'yes';
         } else {
             $result = 'no';
@@ -42,12 +42,12 @@ function prime()
 function primeCheck(int $number)
 {
     if ($number == 1) {
-        return 0;
+        return true;
     }
     for ($i = 2; $i <= $number / 2; $i++) {
         if ($number % $i == 0) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }

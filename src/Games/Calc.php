@@ -18,8 +18,8 @@ function calc()
 
     for ($i = 1; $i <= 3; $i++) {
         $result = '';
-        $arrOperators = ['+', '-', '*'];
-        $operator = $arrOperators[array_rand($arrOperators)];
+        $operators = ['+', '-', '*'];
+        $operator = $operators[array_rand($operators)];
         $random1 = rand(1, 10);
         $random2 =  rand(1, 10);
 

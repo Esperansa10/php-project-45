@@ -15,16 +15,16 @@ function progression()
     line('What number is missing in the progression?');
 
     for ($i = 1; $i <= 3; $i++) {
-        $b = 0;
-        $operator =  rand(1, 5);
-        $a = rand(1, 14);
-        $b = $b + $operator;
-        $arr = [];
+      // создаем стартовое число массива
+        $counter = 0; //счетчик заполнения элементов массива
+        $stepOfProgression =  rand(1, 5); // шаг между числами
+        $counter = $counter + $stepOfProgression; // к счетчику добавляем шаг, получаем стартовое число с которого начнется массив
+        $arrOfProgression = []; // массив прогрессии
 
       //считаем массив
-        for ($p = 1; $p <= 10; $p++) {
-            $b = $b + $operator;
-            $arr[] = $b + $operator;
+        for ($lenghtOfArrOfProgression = 1; $lenghtOfArrOfProgression <= 10; $lenghtOfArrOfProgression++) { //задаем длину массива, название жесть конечно, зато понятно
+            $counter = $counter + $stepOfProgression; //создаем стартовое число массива 
+            $arrOfProgression[] = $counter + $stepOfProgression; // заполняем числами массив
         };
       //закончили считать массив
 
@@ -33,9 +33,9 @@ function progression()
 
       //ставим пробел в массиве
         $indexchange = rand(0, 9);  //хаотично выбираем где будет пробел
-        $result = $arr[$indexchange]; // записываем его как индекс массива + как верный результат
-        $arr[$indexchange] = '..'; // пробуем сразу ставить 2 точки
-        $question = implode(' ', $arr);
+        $result = $arrOfProgression[$indexchange]; // записываем его как индекс массива + как верный результат
+        $arrOfProgression[$indexchange] = '..'; // пробуем сразу ставить 2 точки
+        $question = implode(' ', $arrOfProgression);
 
       //закончили ставить пробел в массиве
         line('Question: ' . $question);

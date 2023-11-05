@@ -23,23 +23,23 @@ function even()
         $answer = prompt('Your answer');
         $flag = evenCheck($random);
 
-        if ($flag === 0 && $answer === 'yes') {
+        if ($flag === 'no' && $answer === 'yes') {
             $result = 'no';
 
             return Engine\checkAnser($answer, $result, $name);
-        } elseif ($flag === 1 && $answer !== 'yes') {
+        } elseif ($flag === 'yes' && $answer !== 'yes') {
             $result = 'yes';
 
             return Engine\checkAnser($answer, $result, $name);
-        } elseif ($flag === 0 && $answer !== 'no') {
+        } elseif ($flag === 'no' && $answer !== 'no') {
             $result = 'no';
 
             return Engine\checkAnser($answer, $result, $name);
-        } elseif ($flag === 1 && $answer === 'yes') {
+        } elseif ($flag === 'yes' && $answer === 'yes') {
             $result = 'yes';
 
             Engine\checkAnser($answer, $result, $name);
-        } elseif ($flag === 0 && $answer === 'no') {
+        } elseif ($flag === 'no' && $answer === 'no') {
             $result = 'no';
 
             Engine\checkAnser($answer, $result, $name);
@@ -51,11 +51,20 @@ function even()
 //cчитаем, четное ли число
 // 1 четное
 // 0 нечетное
+// function evenCheck(int $number)
+// {
+//     if ($number % 2 === 0) {
+//         return 1;
+//     } else {
+//         return 0;
+//     }
+// }
+
 function evenCheck(int $number)
 {
     if ($number % 2 === 0) {
-        return 1;
+        return 'yes';
     } else {
-        return 0;
+        return 'no';
     }
 }
