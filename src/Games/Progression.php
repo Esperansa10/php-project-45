@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Progression;
+namespace MyApp\Games\Progression;
 
-use BrainGames\Engine;
+use MyApp\Games\Engine;
 
 use function cli\line;
 use function cli\prompt;
@@ -14,7 +14,8 @@ function progression()
     line("Hello, %s!", $name);
     line('What number is missing in the progression?');
 
-    for ($i = 1; $i <= 3; $i++) {
+    $round = 3;
+    for ($i = 1; $i <= $round; $i++) {
       // создаем стартовое число массива
         $counter = 0; //счетчик заполнения элементов массива
         $stepOfProgression =  rand(1, 5); // шаг между числами

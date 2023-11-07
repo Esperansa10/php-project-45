@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Even;
+namespace MyApp\Games\Even;
 
-use BrainGames\Engine;
+use MyApp\Games\Engine;
 
 use function cli\line;
 use function cli\prompt;
@@ -16,8 +16,8 @@ function even()
 
     $random = '';
 
-
-    for ($i = 1; $i <= 3; $i++) {
+    $round = 3;
+    for ($i = 1; $i <= $round; $i++) {
         line('Question: ' . $random = rand(1, 10));
         // line('Question: ' . $random = 6);
         $answer = prompt('Your answer');

@@ -1,22 +1,17 @@
 <?php
 
-namespace BrainGames\Even;
+namespace MyApp\Games\Calc;
 
-use BrainGames\Engine;
+use MyApp\Games\Engine;
 
 use function cli\line;
 use function cli\prompt;
 
-function calc()
+function calc($name)
 {
-
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-
     line('What is the result of the expression?');
-
-    for ($i = 1; $i <= 3; $i++) {
+    $round = 3;
+    for ($i = 1; $i <= $round; $i++) {
         $result = '';
         $operators = ['+', '-', '*'];
         $operator = $operators[array_rand($operators)];

@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Prime;
+namespace MyApp\Games\Prime;
 
-use BrainGames\Engine;
+use MyApp\Games\Engine;
 
 use function cli\line;
 use function cli\prompt;
@@ -16,7 +16,8 @@ function prime()
 
     line('Answer "yes" if given number is prime. Otherwise answer "no".?');
 
-    for ($i = 1; $i <= 3; $i++) {
+    $round = 3;
+    for ($i = 1; $i <= $round; $i++) {
         $number = rand(1, 100);
         $flag = primeCheck($number);
         if ($flag == true) {

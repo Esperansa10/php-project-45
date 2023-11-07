@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Gcd;
+namespace MyApp\Games\Gcd;
 
-use BrainGames\Engine;
+use MyApp\Games\Engine;
 
 use function cli\line;
 use function cli\prompt;
@@ -14,7 +14,8 @@ function gcd()
     line("Hello, %s!", $name);
     line('Find the greatest common divisor of given numbers.');
 
-    for ($i = 1; $i <= 3; $i++) {
+    $round = 3;
+    for ($i = 1; $i <= $round; $i++) {
         $result = '';
         $a = rand(1, 100);
         $b = rand(1, 100);
