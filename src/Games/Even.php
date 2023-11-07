@@ -7,7 +7,7 @@ use MyApp\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function even($name)
+function even(string $name)
 {
     line('Answer "yes" if the number is even, otherwise answer "no".');
 

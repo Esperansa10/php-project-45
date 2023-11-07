@@ -7,7 +7,7 @@ use MyApp\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function gcd($name)
+function gcd(string $name)
 {
     line('Find the greatest common divisor of given numbers.');
 

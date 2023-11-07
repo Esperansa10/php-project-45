@@ -7,7 +7,7 @@ use MyApp\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function progression($name)
+function progression(string $name)
 {
     line('What number is missing in the progression?');
 

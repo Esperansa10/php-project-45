@@ -7,7 +7,7 @@ use MyApp\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function prime($name)
+function prime(string $name)
 {
     line('Answer "yes" if given number is prime. Otherwise answer "no".?');
 

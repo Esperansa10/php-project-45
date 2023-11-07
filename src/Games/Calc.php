@@ -7,7 +7,7 @@ use MyApp\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function calc($name)
+function calc(string $name)
 {
     line('What is the result of the expression?');
     $round = 3;
