@@ -11,4 +11,4 @@ if (file_exists($autoloadPath1)) {
 }
 
 MyApp\Games\Engine\greet($name = ''); 
-MyApp\Games\Gcd\gcd(); 
+MyApp\Games\Gcd\gcd($name); 

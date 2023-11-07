@@ -7,11 +7,8 @@ use MyApp\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function gcd()
+function gcd($name)
 {
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
     line('Find the greatest common divisor of given numbers.');
 
     $round = 3;

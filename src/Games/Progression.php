@@ -7,15 +7,12 @@ use MyApp\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function progression()
+function progression($name)
 {
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line('What number is missing in the progression?');
+  line('What number is missing in the progression?');
 
-    $round = 3;
-    for ($i = 1; $i <= $round; $i++) {
+  $round = 3;
+  for ($i = 1; $i <= $round; $i++) {
       // создаем стартовое число массива
         $counter = 0; //счетчик заполнения элементов массива
         $stepOfProgression =  rand(1, 5); // шаг между числами

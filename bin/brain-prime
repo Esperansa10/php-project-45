@@ -11,4 +11,4 @@ if (file_exists($autoloadPath1)) {
 }
 
 MyApp\Games\Engine\greet($name = ''); 
-MyApp\Games\Prime\prime(); 
+MyApp\Games\Prime\prime($name); 

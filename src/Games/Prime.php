@@ -7,13 +7,8 @@ use MyApp\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function prime()
+function prime($name)
 {
-
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-
     line('Answer "yes" if given number is prime. Otherwise answer "no".?');
 
     $round = 3;
