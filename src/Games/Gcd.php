@@ -17,8 +17,8 @@ function gcd(string $name)
         $a = rand(1, 100);
         $b = rand(1, 100);
 
-        // $a = 20;
-        // $b = 40;
+        // $a = 99;
+        // $b = 3;
 
         line('Question: ' . $a . ' ' . $b);
         $answer = prompt('Your answer');
