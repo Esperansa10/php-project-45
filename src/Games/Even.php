@@ -14,8 +14,9 @@ function run()
 
 function even()
 {
-    $questionFromGame =  $random = rand(1, 10);
     $random = rand(1, 100);
+    $questionFromGame =  $random;
+   
 
     if ($random % 2 === 0) {
         $result = 'yes';
