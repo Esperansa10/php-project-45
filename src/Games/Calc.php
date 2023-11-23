@@ -4,40 +4,40 @@ namespace MyApp\Games\Calc;
 
 use MyApp\Games\Engine;
 
-use function cli\line;
-use function cli\prompt;
+const MIN_NUNBER = 1;
+const MAX_NUNBER = 10;
 
-function calc(string $name)
+function calc()
 {
-    line('What is the result of the expression?');
-    $round = 3;
-    for ($i = 1; $i <= $round; $i++) {
-        $result = '';
-        $operators = ['+', '-', '*'];
-        $operator = $operators[array_rand($operators)];
-        $random1 = rand(1, 10);
-        $random2 =  rand(1, 10);
+    $operators = ['+', '-', '*'];
+    $operator = $operators[array_rand($operators)];
+    $firstNumber = rand(MIN_NUNBER, MAX_NUNBER);
+    $secondNumber = rand(MIN_NUNBER, MAX_NUNBER);
 
-        line('Question: ' . $random1 . ' ' . $operator . ' ' . $random2);
-        $answer = prompt('Your answer');
-        $answer = intval($answer);
+    $questionFromGame =  $firstNumber . ' ' . $operator . ' ' . $secondNumber;
 
-        //считаем result
-        if ($operator === '+') {
-            $result = $random1 + $random2;
-        } elseif ($operator === '-') {
-            $result = $random1 - $random2;
-        } else {
-            $result = $random1 * $random2;
-        }
-        // закончили считать result
-
-        //сравниваем result и answer
-        if ($answer === $result) {
-            Engine\checkAnser($answer, $result, $name);
-        } else {
-            return Engine\checkAnser($answer, $result, $name);
-        }
+    switch ($operator) {
+        case '+':
+            $result = $firstNumber + $secondNumber;
+            break;
+        case '-':
+            $result = $firstNumber - $secondNumber;
+            break;
+        case '*':
+            $result = $firstNumber * $secondNumber;
+            break;
+        default:
+            exit('оператор сломан');
     }
-    line("Congratulations, " . $name . "!");
+    $result = (string)$result;
+    // закончили считать result
+    return [$questionFromGame, $result];
+}
+
+function run()
+{
+    $desctiption = 'What is the result of the expression?';
+    Engine\runGames($desctiption, function () {
+        return calc();
+    });
 }

@@ -4,47 +4,30 @@ namespace MyApp\Games\Gcd;
 
 use MyApp\Games\Engine;
 
-use function cli\line;
-use function cli\prompt;
-
-function gcd(string $name)
+function run()
 {
-    line('Find the greatest common divisor of given numbers.');
-
-    $round = 3;
-    for ($i = 1; $i <= $round; $i++) {
-        $result = '';
-        $a = rand(1, 100);
-        $b = rand(1, 100);
-
-        // $a = 99;
-        // $b = 3;
-
-        line('Question: ' . $a . ' ' . $b);
-        $answer = prompt('Your answer');
-        $answer = (int) $answer;
-
-        //считаем result
-        $result = (int) gcd_result($a, $b);
-
-        // закончили считать result
-        //сравниваем result и answer
-        if ($answer === $result) {
-            Engine\checkAnser($answer, $result, $name);
-        } else {
-            return Engine\checkAnser($answer, $result, $name);
-        }
-    }
-    line("Congratulations, " . $name . "!");
+    Engine\runGames('Find the greatest common divisor of given numbers.', function () {
+        return gcd();
+    });
 }
 
-function gcd_result(int $a, int $b)
+function gcd()
+{
+    $firstNumber = rand(1, 100);
+    $secondNumber = rand(1, 100);
+    $questionFromGame = $firstNumber . ' ' . $secondNumber;
+
+    $result = (string) gcd_result($firstNumber, $secondNumber);
+    return [$questionFromGame, $result];
+}
+
+function gcd_result(int $firstNumber, int $secondNumber)
 {
     $result = 1;
-    while ($a % $b > 0) {
-        $result = $a % $b;
-        $a = $b;
-        $b = $result;
+    while ($firstNumber % $secondNumber > 0) {
+        $result = $firstNumber % $secondNumber;
+        $firstNumber = $secondNumber;
+        $secondNumber = $result;
     }
     return $result;
 }

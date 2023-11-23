@@ -4,35 +4,25 @@ namespace MyApp\Games\Prime;
 
 use MyApp\Games\Engine;
 
-use function cli\line;
-use function cli\prompt;
-
-function prime(string $name)
+function run()
 {
-    line('Answer "yes" if given number is prime. Otherwise answer "no".?');
+    Engine\runGames('Answer "yes" if given number is prime. Otherwise answer "no".?', function () {
+        return prime();
+    });
+}
 
-    $round = 3;
-    for ($i = 1; $i <= $round; $i++) {
-        $number = rand(1, 100);
-        $flag = primeCheck($number);
-        if ($flag == true) {
-            $result = 'yes';
-        } else {
-            $result = 'no';
-        }
-
-        line('Question: ' . $number);
-        $answer = prompt('Your answer');
-
-
-      //сравниваем result и answer
-        if ($answer === $result) {
-            Engine\checkAnser($answer, $result, $name);
-        } else {
-            return Engine\checkAnser($answer, $result, $name);
-        }
+function prime()
+{
+    $number = rand(1, 100);
+    $flag = primeCheck($number);
+    if ($flag == true) {
+        $result = 'yes';
+    } else {
+        $result = 'no';
     }
-    line("Congratulations, " . $name . "!");
+
+    $questionFromGame = $number;
+    return [$questionFromGame, $result];
 }
 
 function primeCheck(int $number)

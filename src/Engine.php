@@ -5,6 +5,8 @@ namespace MyApp\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
+const ROUND_COUNT = 3;
+
 function greet()
 {
     line('Welcome to the Brain Games!');
@@ -13,11 +15,22 @@ function greet()
     return $name;
 }
 
-function checkAnser(int|string $answer, int|string $result, string $name)
+function runGames($desctiption, $foo)
 {
-    if ($answer === $result) {
-        return line("Correct");
-    } else {
-        return line("'" . $answer . "' is wrong answer ;(. Correct answer was '" . $result . "'.\nLet's try again, " . $name . "!");
+    $name = greet();
+    line($desctiption);
+    for ($i = 1; $i <= ROUND_COUNT; $i++) {
+        $arr = $foo();
+        $question = $arr[0];
+        line('Question: ' . $question); //calc
+        $result = $arr[1]; // тут правильный ответ
+        $answer = prompt('Your answer');
+
+        if ($result === $answer) {
+            line("Correct");
+        } else {
+            return line("'" . $answer . "' is wrong answer ;(. Correct answer was '" . $result . "'.\nLet's try again, " . $name . "!");
+        }
     }
+    line("Congratulations, " . $name . "!");
 }
