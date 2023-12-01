@@ -13,11 +13,8 @@ function run()
 
 function gcd()
 {
-    // $firstNumber = rand(1, 100);
-    // $secondNumber = rand(1, 100);
-
-    $firstNumber = 84;
-    $secondNumber = 14;
+    $firstNumber = rand(1, 100);
+    $secondNumber = rand(1, 100);
 
     $questionFromGame = $firstNumber . ' ' . $secondNumber;
 
@@ -27,14 +24,17 @@ function gcd()
 
 function gcd_result(int $firstNumber, int $secondNumber)
 {
-    // $result = 1;
-    // while ($firstNumber % $secondNumber > 0) {
-    //     $result = $firstNumber % $secondNumber;
-    //     $firstNumber = $secondNumber;
-    //     $secondNumber = $result;
+    $result = $firstNumber;
 
-    return ($firstNumber % $secondNumber) ? gcd($secondNumber, $firstNumber % $secondNumber) : $secondNumber;
+    if ($firstNumber > $secondNumber) {
+        $result = $secondNumber;
+    };
 
-    // }
-    // return $result;
+    while ($result > 1) {
+        if ($firstNumber % $result === 0 && $secondNumber % $result === 0) {
+            return $result;
+        }
+        $result--;
+    }
+    return $result;
 }

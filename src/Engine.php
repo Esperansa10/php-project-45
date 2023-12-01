@@ -2,6 +2,8 @@
 
 namespace MyApp\Games\Engine;
 
+use Closure;
+
 use function cli\line;
 use function cli\prompt;
 
@@ -15,7 +17,7 @@ function greet()
     return $name;
 }
 
-function runGames($desctiption, $foo)
+function runGames(string $desctiption, Closure $foo)
 {
     $name = greet();
     line($desctiption);
