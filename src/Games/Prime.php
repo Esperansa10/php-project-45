@@ -4,6 +4,9 @@ namespace MyApp\Games\Prime;
 
 use MyApp\Games\Engine;
 
+const MIN_NUNBER = 1;
+const MAX_NUNBER = 100;
+
 function run()
 {
     Engine\runGames('Answer "yes" if given number is prime. Otherwise answer "no".?', function () {
@@ -13,7 +16,7 @@ function run()
 
 function prime()
 {
-    $number = rand(1, 100);
+    $number = rand(MIN_NUNBER, MAX_NUNBER);
     $flag = primeCheck($number);
     if ($flag == true) {
         $result = 'yes';

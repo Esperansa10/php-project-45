@@ -17,15 +17,15 @@ function greet()
     return $name;
 }
 
-function runGames(string $desctiption, Closure $foo)
+function runGames(string $desctiption, Closure $getGameData)
 {
     $name = greet();
     line($desctiption);
     for ($i = 1; $i <= ROUND_COUNT; $i++) {
-        $arr = $foo();
-        $question = $arr[0];
-        line('Question: ' . $question); //calc
-        $result = $arr[1]; // тут правильный ответ
+        $gameData = $getGameData();
+        $question = $gameData[0];
+        line('Question: ' . $question);
+        $result = $gameData[1];
         $answer = prompt('Your answer');
 
         if ($result === $answer) {

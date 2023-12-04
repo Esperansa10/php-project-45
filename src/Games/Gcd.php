@@ -4,6 +4,9 @@ namespace MyApp\Games\Gcd;
 
 use MyApp\Games\Engine;
 
+const MIN_NUNBER = 1;
+const MAX_NUNBER = 100;
+
 function run()
 {
     Engine\runGames('Find the greatest common divisor of given numbers.', function () {
@@ -13,16 +16,16 @@ function run()
 
 function gcd()
 {
-    $firstNumber = rand(1, 100);
-    $secondNumber = rand(1, 100);
+    $firstNumber = rand(MIN_NUNBER, MAX_NUNBER);
+    $secondNumber = rand(MIN_NUNBER, MAX_NUNBER);
 
     $questionFromGame = $firstNumber . ' ' . $secondNumber;
 
-    $result = (string) gcd_result($firstNumber, $secondNumber);
+    $result = (string) gcdResult($firstNumber, $secondNumber);
     return [$questionFromGame, $result];
 }
 
-function gcd_result(int $firstNumber, int $secondNumber)
+function gcdResult(int $firstNumber, int $secondNumber)
 {
     $result = $firstNumber;
 
