@@ -4,15 +4,15 @@ namespace MyApp\Games\Calc;
 
 use MyApp\Games\Engine;
 
-const MIN_NUNBER = 1;
-const MAX_NUNBER = 10;
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 10;
 
 function calc()
 {
     $operators = ['+', '-', '*'];
     $operator = $operators[array_rand($operators)];
-    $firstNumber = rand(MIN_NUNBER, MAX_NUNBER);
-    $secondNumber = rand(MIN_NUNBER, MAX_NUNBER);
+    $firstNumber = rand(MIN_NUMBER, MAX_NUMBER);
+    $secondNumber = rand(MIN_NUMBER, MAX_NUMBER);
 
     $questionFromGame =  $firstNumber . ' ' . $operator . ' ' . $secondNumber;
 
@@ -36,8 +36,8 @@ function calc()
 
 function run()
 {
-    $desctiption = 'What is the result of the expression?';
-    Engine\runGames($desctiption, function () {
+    $description = 'What is the result of the expression?';
+    Engine\runGames($description, function () {
         return calc();
     });
 }

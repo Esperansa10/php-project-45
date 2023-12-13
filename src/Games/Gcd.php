@@ -4,8 +4,8 @@ namespace MyApp\Games\Gcd;
 
 use MyApp\Games\Engine;
 
-const MIN_NUNBER = 1;
-const MAX_NUNBER = 100;
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 100;
 
 function run()
 {
@@ -16,8 +16,8 @@ function run()
 
 function gcd()
 {
-    $firstNumber = rand(MIN_NUNBER, MAX_NUNBER);
-    $secondNumber = rand(MIN_NUNBER, MAX_NUNBER);
+    $firstNumber = rand(MIN_NUMBER, MAX_NUMBER);
+    $secondNumber = rand(MIN_NUMBER, MAX_NUMBER);
 
     $questionFromGame = $firstNumber . ' ' . $secondNumber;
 

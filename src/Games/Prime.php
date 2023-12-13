@@ -4,8 +4,8 @@ namespace MyApp\Games\Prime;
 
 use MyApp\Games\Engine;
 
-const MIN_NUNBER = 1;
-const MAX_NUNBER = 100;
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 100;
 
 function run()
 {
@@ -16,7 +16,7 @@ function run()
 
 function prime()
 {
-    $number = rand(MIN_NUNBER, MAX_NUNBER);
+    $number = rand(MIN_NUMBER, MAX_NUMBER);
     $flag = primeCheck($number);
     if ($flag == true) {
         $result = 'yes';
@@ -30,11 +30,11 @@ function prime()
 
 function primeCheck(int $number)
 {
-    if ($number == 1) {
+    if ($number === 1) {
         return true;
     }
     for ($i = 2; $i <= $number / 2; $i++) {
-        if ($number % $i == 0) {
+        if ($number % $i === 0) {
             return false;
         }
     }

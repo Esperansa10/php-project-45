@@ -3,24 +3,17 @@
 namespace MyApp\Games\Engine;
 
 use Closure;
+use MyApp\Cli;
 
 use function cli\line;
 use function cli\prompt;
 
 const ROUND_COUNT = 3;
 
-function greet()
+function runGames(string $description, Closure $getGameData)
 {
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    return $name;
-}
-
-function runGames(string $desctiption, Closure $getGameData)
-{
-    $name = greet();
-    line($desctiption);
+    $name = Cli\greet();
+    line($description);
     for ($i = 1; $i <= ROUND_COUNT; $i++) {
         $gameData = $getGameData();
         $question = $gameData[0];

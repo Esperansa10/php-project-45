@@ -4,10 +4,10 @@ namespace MyApp\Games\Progression;
 
 use MyApp\Games\Engine;
 
-const PROGRESSION_LEGTH = 10;
+const PROGRESSION_LENGTH = 10;
 
-const MIN_NUNBER = 1;
-const MAX_NUNBER = 5;
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 5;
 
 function run()
 {
@@ -19,20 +19,20 @@ function run()
 function progression()
 {
     $counter = 0;
-    $progressionStep =  rand(MIN_NUNBER, MAX_NUNBER); // цифры заменить на контанты minstepprogresstion , maxstepprogression
+    $progressionStep =  rand(MIN_NUMBER, MAX_NUMBER); // цифры заменить на контанты minstepprogresstion , maxstepprogression
     $progression = [];
 
     //считаем массив
-    for ($i = 1; $i <= PROGRESSION_LEGTH; $i++) {
+    for ($i = 1; $i <= PROGRESSION_LENGTH; $i++) {
         $counter = $counter + $progressionStep;
         // $progression[] = $counter + $progressionStep;
         $progression[] = $counter;
-    };
+    }
     //закончили считать массив
 
 
     //ставим пробел в массиве
-    $indexHired = rand(0, PROGRESSION_LEGTH - 1);  //хаотично выбираем где будет пробел
+    $indexHired = rand(0, PROGRESSION_LENGTH - 1);  //хаотично выбираем где будет пробел
     $result = (string) $progression[$indexHired]; // записываем его как индекс массива + как верный результат
     $progression[$indexHired] = '..'; // пробуем сразу ставить 2 точки
     $questionFromGame = implode(' ', $progression);
