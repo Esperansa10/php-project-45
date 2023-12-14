@@ -19,7 +19,7 @@ function run()
 function progression()
 {
     $counter = 0;
-    $progressionStep =  rand(MIN_NUMBER, MAX_NUMBER); // цифры заменить на контанты minstepprogresstion , maxstepprogression
+    $progressionStep =  rand(MIN_NUMBER, MAX_NUMBER);
     $progression = [];
 
     //считаем массив
