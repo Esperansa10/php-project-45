@@ -2,7 +2,7 @@
 
 namespace MyApp\Games\Gcd;
 
-use MyApp\Games\Engine;
+use MyApp\Engine;
 
 const MIN_NUMBER = 1;
 const MAX_NUMBER = 100;

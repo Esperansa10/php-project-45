@@ -2,7 +2,7 @@
 
 namespace MyApp\Games\Progression;
 
-use MyApp\Games\Engine;
+use MyApp\Engine;
 
 const PROGRESSION_LENGTH = 10;
 

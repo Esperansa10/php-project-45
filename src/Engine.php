@@ -1,6 +1,6 @@
 <?php
 
-namespace MyApp\Games\Engine;
+namespace MyApp\Engine;
 
 use Closure;
 use MyApp\Cli;
